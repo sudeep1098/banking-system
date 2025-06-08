@@ -3,6 +3,7 @@ export const TransactionStatus = {
     PENDING: 'PENDING',
     VERIFIED: 'VERIFIED',
     REJECTED: 'REJECTED',
+    COMPLETED: 'COMPLETED',
 } as const;
 
 // Transaction Types

@@ -1,6 +1,6 @@
 // Account Types
 export const AccountType = {
-    SAVINGS: 'SAVINGS',
+    SAVING: 'SAVING',
     SALARY: 'SALARY',
     BSBDA: 'BSBDA',
     CURRENT: 'CURRENT',

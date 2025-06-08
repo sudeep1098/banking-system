@@ -6,6 +6,7 @@ import accountRoutes from './accountRoutes';
 import governmentIdRoutes from './governmentIdRoutes';
 import roleRoutes from './roleRoutes';
 import permissionRoutes from './permissionRoutes';
+import transactionRoutes from './transactionRoutes';
 import { protect } from '../middleware/authMiddleware';
 
 const router = Router();
@@ -20,5 +21,8 @@ router.use('/accounts', protect, accountRoutes);
 router.use('/governmentIds', protect, governmentIdRoutes);
 router.use('/roles', roleRoutes);
 router.use('/permissions', permissionRoutes);
+
+// Transaction routes
+router.use('/transaction', protect, transactionRoutes);
 
 export default router;
