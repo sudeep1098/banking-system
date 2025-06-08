@@ -1,12 +1,16 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import dotenv from 'dotenv';
+import connectDB from './config/db';
+import apiRoutes from './routes/apiRoutes';
+
+dotenv.config();
+connectDB();
 
 const app = express();
-const port = process.env.PORT || 5000;
+app.use(express.json());
+app.use('/api', apiRoutes);
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Hello World!');
-});
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
