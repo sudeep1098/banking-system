@@ -1,11 +1,16 @@
+import { ThemeProvider } from '@mui/material';
+import { ToastProvider } from './context/ToastProvider';
+import Layout from './Layout';
+import { theme } from './config/theme';
 
+const App = () => {
+    return (
+        <ThemeProvider theme={theme}>
+            <ToastProvider>
+                <Layout />
+            </ToastProvider>
+        </ThemeProvider>
+    );
+};
 
-function App() {
-  return (
-    <>
-      <h1 className="text-3xl">Hello</h1>
-    </>
-  )
-}
-
-export default App
+export default App;
